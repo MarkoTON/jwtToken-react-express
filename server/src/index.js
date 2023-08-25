@@ -98,7 +98,7 @@ server.post('/logout', (_req, res) => {
   });
 });
 
-// 4. Protected route
+// 4. Setup a protected route
 server.post('/protected', async (req, res) => {
   try {
     const userId = isAuth(req);
@@ -114,7 +114,7 @@ server.post('/protected', async (req, res) => {
   }
 });
 
-// 5. Get a new access token with a refresh token
+// 5. Get a new accesstoken with a refresh token
 server.post('/refresh_token', (req, res) => {
   const token = req.cookies.refreshtoken;
   // If we don't have a token in our request
